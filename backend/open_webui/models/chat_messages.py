@@ -975,6 +975,7 @@ class ChatMessageTable:
             stmt = select(ChatMessage.created_at, ChatMessage.model_id).filter(
                 ChatMessage.role == 'assistant',
                 ChatMessage.model_id.isnot(None),
+                ChatMessage.created_at.isnot(None),
             )
 
             if start_date:
@@ -1021,6 +1022,7 @@ class ChatMessageTable:
             stmt = select(ChatMessage.created_at, ChatMessage.model_id).filter(
                 ChatMessage.role == 'assistant',
                 ChatMessage.model_id.isnot(None),
+                ChatMessage.created_at.isnot(None),
             )
 
             if start_date:
